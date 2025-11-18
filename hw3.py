@@ -39,3 +39,14 @@ async def main():
 
 if __name__ == '__main__':
     asyncio.run(main())
+
+
+async def countdown(n):
+
+    for i in range(n,0,-1):
+        await asyncio.sleep(1)
+        print(i)
+
+
+if __name__ == '__main__':
+    asyncio.run(countdown(3))
