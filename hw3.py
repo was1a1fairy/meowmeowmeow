@@ -1,4 +1,5 @@
 import asyncio
+import random
 
 
 async def say_hello():
@@ -50,3 +51,14 @@ async def countdown(n):
 
 if __name__ == '__main__':
     asyncio.run(countdown(3))
+
+
+async def fetch_data(index):
+    await asyncio.sleep(random.randint(1,5))
+    print(f"Данные {index} получены")
+
+async def main():
+    await asyncio.gather(fetch_data(111), fetch_data(222), fetch_data(333), fetch_data(444), fetch_data(555))
+
+if __name__ == '__main__':
+    asyncio.run(main())
